@@ -1,9 +1,9 @@
-package org.example;
+package testing;
 
 import java.util.ArrayList;
 
-import static org.example.Transaction.DEPOSIT;
-import static org.example.Transaction.WITHDRAW;
+import static testing.Transaction.DEPOSIT;
+import static testing.Transaction.WITHDRAW;
 
 public class Account {
     private double balance;
@@ -27,6 +27,9 @@ public class Account {
     }
 
     public void printTransaction() {
+        if (transactionList.isEmpty()) {
+            System.out.println("You don't have any transactions!");
+        }
         for (int i = 0; i < transactionList.size(); i++) {
             Transaction cur = transactionList.get(i);
             if (cur.getOperation().equals(DEPOSIT)) {
